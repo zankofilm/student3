@@ -1,0 +1,22 @@
+مدرسه‌یار دانش‌آموز — نسخه ۱.۱۲.۰
+
+بررسی‌های خودکار نهایی:
+- node --check server-integration/INSTALL-ROOT/server.mjs: موفق
+- node --check server-integration/INSTALL-ROOT/shared/mobile-push.mjs: موفق
+- node --check server-integration/INSTALL-ROOT/student/app.js: موفق
+- node --check app/src/main/assets/girl-dashboard.js: موفق
+- node --check app/src/main/assets/girl-sections.js: موفق
+- node --test tests/*.test.mjs: ۶۰ تست موفق، ۰ ناموفق
+
+موارد پوشش‌داده‌شده در V1.12:
+- ثبت و نمایش آخرین زمان Sync موفق
+- عدم دریافت مجدد جزئیات کارنامه بدون تغییر
+- پاک‌سازی ایمن داده‌ها هنگام تعویض حساب
+- Logout + Push unregister + session revoke
+- دریافت FCM token جدید در Android
+- یکسان بودن نسخه Android و Server
+- قرارداد Release Signing در CI
+
+محدودیت تأیید محلی:
+- Android SDK و Gradle در محیط اجرا نصب نبودند؛ APK در این محیط ساخته و روی دستگاه واقعی نصب نشد.
+- Workflow CI برای Build واقعی APK تنظیم شده و Build دستگاه/FCM باید در GitHub Actions یا محیط Android SDK اجرا شود.
